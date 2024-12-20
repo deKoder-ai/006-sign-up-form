@@ -5,18 +5,18 @@
 /* better to store fonts locally on the website */
 @font-face {
     font-family: adrip;
-    src: url(/fonts/adrip1.woff2);
+    src: url(./fonts/adrip1.woff2);
     font-weight: bold;
     font-display: swap;
 }
 @font-face {
     font-family: typo;
-    src: url(/fonts/typo.woff2);
+    src: url(./fonts/typo.woff2);
     font-display: swap;
 }
 @font-face {
     font-family: montserrat;
-    src: url(/fonts/montserrat-regular.woff2);
+    src: url(./fonts/montserrat-regular.woff2);
     font-display: swap;
 }
 
