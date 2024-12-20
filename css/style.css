@@ -1,0 +1,254 @@
+/* style.css template */
+@import 'reset.css';
+
+/* using the Google Fonts API violates the European GDPR */
+/* better to store fonts locally on the website */
+@font-face {
+    font-family: adrip;
+    src: url(/fonts/adrip1.woff2);
+    font-weight: bold;
+    font-display: swap;
+}
+@font-face {
+    font-family: typo;
+    src: url(/fonts/typo.woff2);
+    font-display: swap;
+}
+@font-face {
+    font-family: montserrat;
+    src: url(/fonts/montserrat-regular.woff2);
+    font-display: swap;
+}
+
+/* global - specificity = 0 */
+* {
+    /* temp outline to visualise box placement */
+    outline: 1px dashed rgba(55, 52, 235, 0.623);
+}
+
+:root {
+    --header-height: 5rem;
+    --header-footer-bg-col: rgb(7, 7, 7);
+    --text-color: rgb(204, 204, 204);
+    --main-bg-col: rgb(19, 19, 19);
+    --h1-col: rgb(158, 40, 40);
+    
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    /* call fonts as early as possible to improve performance */
+    font-family: typo, Verdana, system-ui, sans-serif;
+    /* font-size: calc(1rem + 1.5vw); */
+    color: var(--text-color);
+    background-color: #181818;
+}
+
+h1 {
+    font-family: adrip, system-ui, sans-serif;
+    font-size: clamp(7rem, (1rem + 10vw), 10rem);
+    font-weight: 100;
+    color: var(--h1-col);
+    text-align: center;
+    margin-bottom: -25px;
+    text-shadow: 3px 3px 5px #100a5791;
+}
+
+h2 {
+    font-family: montserrat, Verdana, sans-serif;
+    font-size: 2.2rem;
+    text-wrap: pretty;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+header {
+    width: 100%;
+    height: var(--header-height);
+    position: sticky;
+    top: 0;
+    background-color: var(--header-footer-bg-col);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header-logo {
+    font-family: adrip, system-ui, sans-serif;
+    font-size: clamp(3rem, (1rem + 3vw), 4rem);
+    /* font-size: 4rem; */
+    padding-left: 25px;
+    padding-top: 5px;
+    width: 50%;
+    /* text-shadow: 5px 5px 5px blue; */
+}
+.header-links {
+    /* font-size: 1.6rem; */
+    font-size: clamp(1.2rem, (0.2rem + 2vw), 1.6rem);
+    margin-right: 40px;
+    width: calc(50% - 25px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2px;
+}
+#header-logo:focus,
+.header-links >:focus,
+#header-logo:hover,
+.header-links >:hover {
+    color: var(--h1-col);
+    outline: none;
+    text-shadow: 2px 2px 2px #100a5791;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 15px;
+}
+#header-logo:focus,
+#header-logo:hover {
+    text-decoration-thickness: 1px;
+    margin-top: -3px;
+}
+.burger-container {
+    /* display: none; */
+    /* position: fixed; */
+    width: 47px;
+    height: 80%;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    /* outline: 1px solid rgba(255, 255, 255, 0.39); */
+    background-color: black;
+    margin: 5px;
+}
+.burger-container:focus,
+.burger-container:hover {
+    color: var(--h1-col);
+    outline: 1px solid var(--h1-col);
+    box-shadow: 2px 2px 2px #100a5791;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 15px;
+}
+.burger-container:hover {
+    cursor: pointer;
+}
+.burger-line {
+    background-color: rgba(255, 255, 255, 0.842);
+    width: 25px;
+    height: 2px;
+}
+.burger-container :nth-child(2) {
+    margin: 7px 0;
+}
+footer {
+    width: 100vw;
+    height: 3.5rem;
+    background-color: var(--header-footer-bg-col);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3px;;
+}
+
+/* ========== BOX MODEL ========== //
+//
+// Margin      | e.g. margin: 10px 10px 10px 20px (top | right | bottom | left)  
+// Border      | e.g. border: 2px dotted green
+// Padding     | e.g. padding: 10px (shorthand)
+// Content     | 
+// box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+*/
+
+
+
+
+
+
+
+.view {
+    background-color: var(--main-bg-col);
+    width: 100%;
+    height: 900px;
+}
+
+.main-text p {
+    /* wrap text after 66 characters to improve readability */
+    width: clamp(45ch, 80vw, 75ch);
+    margin: 0px auto;
+    max-inline-size: clamp(45ch, 70ch, 75ch);
+    padding: 5px 50px;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    text-indent: 3ch;
+    /* letter-spacing: 0.0005rem; */
+}
+
+#example-img {
+    width: 100%;
+    height: auto;
+}
+
+#main-flex-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#banner {
+    width: 37%;
+    height: 100%;
+}
+#ferns {
+    width: 100%;
+    height: 100%;
+}
+#banner-logo {
+    width: 37%;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.548);
+    position: absolute;
+    top: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#odin-logo {
+    height: 80%;
+    width: auto;
+    margin-right: 20px;
+}
+
+#main-info {
+    width: 63%;
+    height: 100%;
+}
+.main-info {
+    width: 100%;
+    background-color: #eff3f8;
+    color: rgb(79, 81, 99);
+}
+#main-info-top {
+    height: 300px;
+    padding: 110px 100px 10px 40px;
+    line-height: 1.8;
+}
+
+#form-container {
+    width: 100%;
+    height: 270px;
+    background-color: #f6f9fd;
+    color: rgb(70, 71, 82);
+    padding: 20px 40px;
+}
+
+#main-info-bottom {
+    width: 100%;
+    height: 330px;
+}
